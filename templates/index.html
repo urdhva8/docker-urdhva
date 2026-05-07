@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Simple Shopping App</h1>
+
+<a href="/cart">Go To Cart</a>
+
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <h2>{{ product.name }}</h2>
+        <p>₹ {{ product.price }}</p>
+        <a href="/add/{{ product.id }}">Add To Cart</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
